@@ -1,0 +1,42 @@
+2020-12-16 01:54:44.220  INFO 13332 --- [restartedMain] c.c.a.AddressBookAppApplication          : Starting AddressBookAppApplication using Java 13.0.2 on LAPTOP-2DQUBLJ8 with PID 13332 (H:\java-eclipse\AddressBookApp\target\classes started by ganeshrapeti in H:\java-eclipse\AddressBookApp)
+2020-12-16 01:54:44.224 DEBUG 13332 --- [restartedMain] c.c.a.AddressBookAppApplication          : Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-16 01:54:44.225  INFO 13332 --- [restartedMain] c.c.a.AddressBookAppApplication          : The following profiles are active: dev
+2020-12-16 01:54:46.155  WARN 13332 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-12-16 01:54:48.147  WARN 13332 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-16 01:54:48.846  INFO 13332 --- [restartedMain] c.c.a.AddressBookAppApplication          : Started AddressBookAppApplication in 5.77 seconds (JVM running for 6.898)
+2020-12-16 01:54:48.850  INFO 13332 --- [restartedMain] c.c.a.AddressBookAppApplication          : Address Book App Started
+2020-12-16 02:02:45.764  INFO 13332 --- [restartedMain] c.c.a.AddressBookAppApplication          : Starting AddressBookAppApplication using Java 13.0.2 on LAPTOP-2DQUBLJ8 with PID 13332 (H:\java-eclipse\AddressBookApp\target\classes started by ganeshrapeti in H:\java-eclipse\AddressBookApp)
+2020-12-16 02:02:45.766 DEBUG 13332 --- [restartedMain] c.c.a.AddressBookAppApplication          : Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-16 02:02:45.766  INFO 13332 --- [restartedMain] c.c.a.AddressBookAppApplication          : The following profiles are active: dev
+2020-12-16 02:02:46.497  WARN 13332 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-12-16 02:02:46.776  WARN 13332 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-16 02:02:47.083  INFO 13332 --- [restartedMain] c.c.a.AddressBookAppApplication          : Started AddressBookAppApplication in 1.382 seconds (JVM running for 485.135)
+2020-12-16 02:02:47.086  INFO 13332 --- [restartedMain] c.c.a.AddressBookAppApplication          : Address Book App Started
+2020-12-16 02:02:47.921  INFO 16888 --- [restartedMain] c.c.a.AddressBookAppApplication          : Starting AddressBookAppApplication using Java 13.0.2 on LAPTOP-2DQUBLJ8 with PID 16888 (H:\java-eclipse\AddressBookApp\target\classes started by ganeshrapeti in H:\java-eclipse\AddressBookApp)
+2020-12-16 02:02:47.927 DEBUG 16888 --- [restartedMain] c.c.a.AddressBookAppApplication          : Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-16 02:02:47.927  INFO 16888 --- [restartedMain] c.c.a.AddressBookAppApplication          : The following profiles are active: dev
+2020-12-16 02:02:49.879  WARN 16888 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-12-16 02:02:51.748  WARN 16888 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-16 02:02:52.109  WARN 16888 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-12-16 02:02:52.417  WARN 16888 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8091 is already in use
+2020-12-16 02:02:52.467 ERROR 16888 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8091 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8091 or configure this application to listen on another port.
+
+2020-12-16 02:03:21.854  INFO 9248 --- [restartedMain] c.c.a.AddressBookAppApplication          : Starting AddressBookAppApplication using Java 13.0.2 on LAPTOP-2DQUBLJ8 with PID 9248 (H:\java-eclipse\AddressBookApp\target\classes started by ganeshrapeti in H:\java-eclipse\AddressBookApp)
+2020-12-16 02:03:21.858 DEBUG 9248 --- [restartedMain] c.c.a.AddressBookAppApplication          : Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-16 02:03:21.859  INFO 9248 --- [restartedMain] c.c.a.AddressBookAppApplication          : The following profiles are active: dev
+2020-12-16 02:03:24.049  WARN 9248 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-12-16 02:03:25.940  WARN 9248 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-16 02:03:26.608  INFO 9248 --- [restartedMain] c.c.a.AddressBookAppApplication          : Started AddressBookAppApplication in 5.283 seconds (JVM running for 6.445)
+2020-12-16 02:03:26.611  INFO 9248 --- [restartedMain] c.c.a.AddressBookAppApplication          : Address Book App Started
