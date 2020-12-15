@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.cg.addressbook.dto.AddressBookDTO;
 import com.cg.addressbook.dto.ResponseDTO;
-import com.cg.addressbook.model.PersonData;
+import com.cg.addressbook.model.AddressBookData;
 import com.cg.addressbook.service.AddressBookService;
 
 @RestController
@@ -19,35 +19,35 @@ public class AddressBookController {
 	private AddressBookService addressBookService;
 	
 	@RequestMapping(value= {"","/","/get"})
-	public ResponseEntity<ResponseDTO> getPersonData(){
-		List<PersonData> personDataList = addressBookService.getPersonData();
-		ResponseDTO respDTO = new ResponseDTO("Get Call Successful", personDataList);
-		return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
+	public ResponseEntity<List<AddressBookData>> getPersonData(){
+		try {
+			return ResponseEntity.status(HttpStatus.OK).body(addressBookService.getPersonData());
+		}catch(Exception e) {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
 	}
 	
 	@RequestMapping("/get/{fName}")
-	public ResponseEntity<ResponseDTO> getPersonData(@PathVariable("fName") String firstName){
-		PersonData personData = addressBookService.getPersonByFirstName(firstName);
-		ResponseDTO respDTO = new ResponseDTO("Get Call Successful for first Name", personData);
-		return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
+	public ResponseEntity<AddressBookData> getPersonData(@PathVariable("fName") String firstName){
+		return ResponseEntity.status(HttpStatus.OK).body(addressBookService.getPersonByFirstName(firstName));
 	}
 	
 	@PostMapping("/create")
 	public ResponseEntity<ResponseDTO> addPersonData(@RequestBody AddressBookDTO addressBookDTO){
-		PersonData personData = addressBookService.createPersonData(addressBookDTO);
+		AddressBookData personData = addressBookService.createPersonData(addressBookDTO);
 		ResponseDTO respDTO = new ResponseDTO("Create Call Successful", personData);
 		return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
 	}
 	
 	@PutMapping("/update")
-	public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@RequestBody AddressBookDTO addressBookDTO){
-		PersonData personData = addressBookService.updatePersonData(addressBookDTO);
+	public ResponseEntity<ResponseDTO> updatePersonData(@RequestBody AddressBookDTO addressBookDTO){
+		AddressBookData personData = addressBookService.updatePersonData(addressBookDTO.getFirstName(),addressBookDTO);
 		ResponseDTO respDTO = new ResponseDTO("Update Call Successful", personData);
 		return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/delete/{fName}")
-	public ResponseEntity<ResponseDTO> deleteEmployeePayrollData(@PathVariable("fName") String firstName){
+	public ResponseEntity<ResponseDTO> deletePersonData(@PathVariable("fName") String firstName){
 		addressBookService.deletePersonData(firstName);
 		ResponseDTO respDTO = new ResponseDTO("Delete Call Successful", firstName);
 		return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);

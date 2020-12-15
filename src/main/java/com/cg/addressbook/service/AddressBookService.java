@@ -2,45 +2,44 @@ package com.cg.addressbook.service;
 
 import java.util.*;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cg.addressbook.dto.AddressBookDTO;
-import com.cg.addressbook.model.PersonData;
+import com.cg.addressbook.model.AddressBookData;
+import com.cg.addressbook.repository.AddressBookRepository;
 
 @Service
 public class AddressBookService {
 	
-	private List<PersonData> personDataList = new ArrayList<PersonData>();
+	@Autowired
+	private AddressBookRepository addressBookRepository;
 	
-	public List<PersonData> getPersonData() {
-		return personDataList;
+	public List<AddressBookData> getPersonData() {
+		return addressBookRepository.findAll();
 	}
 	
-	public PersonData getPersonByFirstName(String firstName) {
-		PersonData personData = null;
-		for(PersonData person: personDataList) {
-			if(person.getFirstName().equals(firstName)) {
-				personData = person;
-			}
-		}
+	public AddressBookData getPersonByFirstName(String firstName) {
+		AddressBookData personData = addressBookRepository.findById(firstName).orElseThrow();
 		return personData;
 	}
 	
-	public PersonData createPersonData(AddressBookDTO addressBookDTO) {
-		PersonData person = null;
-		person = new PersonData(addressBookDTO);
+	public AddressBookData createPersonData(AddressBookDTO addressBookDTO) {
+		AddressBookData person = null;
+		person = new AddressBookData(addressBookDTO);
+		addressBookRepository.save(person);
 		return person;
 	}
 	
-	public PersonData updatePersonData(String firstName,AddressBookDTO addressBookDTO) {
-		PersonData person = this.getPersonByFirstName(firstName);
+	public AddressBookData updatePersonData(String firstName,AddressBookDTO addressBookDTO) {
+		AddressBookData person = this.getPersonByFirstName(firstName);
 		person.setAddress(addressBookDTO.getAddress());
+		addressBookRepository.save(person);
 		return person;
 	}
 	
 	public void deletePersonData(String firstName) {
-		PersonData person = this.getPersonByFirstName(firstName);
-		personDataList.remove(person);
+		addressBookRepository.deleteById(firstName);
 	}
 	
 }
