@@ -1,5 +1,7 @@
 package com.cg.addressbook.model;
 
+import com.cg.addressbook.dto.AddressBookDTO;
+
 public class PersonData {
 	private String firstName;
 	private String lastName;
@@ -70,5 +72,15 @@ public class PersonData {
 	}
 	public PersonData() {
 		
+	}
+	public PersonData(AddressBookDTO addressBookDTO) {
+		this.firstName = addressBookDTO.getFirstName();
+		this.lastName = addressBookDTO.getLastName();
+		this.address = addressBookDTO.getAddress();
+		this.city = addressBookDTO.getCity();
+		this.state = addressBookDTO.getState();
+		this.zip = addressBookDTO.getZip();
+		this.phoneNumber = addressBookDTO.getPhoneNumber();
+		this.email = addressBookDTO.getEmail();
 	}
 }
