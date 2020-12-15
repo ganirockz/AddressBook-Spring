@@ -3,32 +3,51 @@ package com.cg.addressbook.controller;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
+import com.cg.addressbook.dto.ResponseDTO;
+import com.cg.addressbook.model.PersonData;
+
 @RestController
 @RequestMapping("/addressbook")
 public class AddressBookController {
 	
 	@RequestMapping(value= {"","/","/get"})
-	public ResponseEntity<String> getPersonData(){
-		return new ResponseEntity<String>("Get Call Success",HttpStatus.OK);
+	public ResponseEntity<ResponseDTO> getPersonData(){
+		PersonData personData = null;
+		personData = new PersonData("Ganesh","Rapeti", "1-51A,Venkupalem", "Anakapalle", "Andhra Pradesh", "190007", "9866832480", "ganeshrapeti8@gmail.com");
+		ResponseDTO respDTO = new ResponseDTO("Get Call Successful", personData);
+		return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
 	}
 	
 	@RequestMapping("/get/{fName}")
-	public ResponseEntity<String> getPersonData(@PathVariable("fName") String firstName){
-		return new ResponseEntity<String>("Get Call Success for first name: "+firstName,HttpStatus.OK);
+	public ResponseEntity<ResponseDTO> getPersonData(@PathVariable("fName") String firstName){
+		PersonData personData = null;
+		personData = new PersonData("Ganesh","Rapeti", "1-51A,Venkupalem", "Anakapalle", "Andhra Pradesh", "190007", "9866832480", "ganeshrapeti8@gmail.com");
+		personData.setFirstName(firstName);
+		ResponseDTO respDTO = new ResponseDTO("Get Call Successful for first Name", personData);
+		return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity<String> addPersonData(){
-		return new ResponseEntity<String>("Created Employee Payroll Data ", HttpStatus.OK);
+	public ResponseEntity<ResponseDTO> addPersonData(){
+		PersonData personData = null;
+		personData = new PersonData("Ganesh","Rapeti", "1-51A,Venkupalem", "Anakapalle", "Andhra Pradesh", "190007", "9866832480", "ganeshrapeti8@gmail.com");
+		ResponseDTO respDTO = new ResponseDTO("Create Call Successful", personData);
+		return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
 	}
 	
 	@PutMapping("/update")
-	public ResponseEntity<String> updateEmployeePayrollData(){
-		return new ResponseEntity<String>("Updated Employee Payroll Data ",HttpStatus.OK);
+	public ResponseEntity<ResponseDTO> updateEmployeePayrollData(){
+		PersonData personData = null;
+		personData = new PersonData("Ganesh","Rapeti", "1-51A,Venkupalem", "Anakapalle", "Andhra Pradesh", "190007", "9866832480", "ganeshrapeti8@gmail.com");
+		ResponseDTO respDTO = new ResponseDTO("Update Call Successful", personData);
+		return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/delete/{fName}")
-	public ResponseEntity<String> deleteEmployeePayrollData(@PathVariable("fName") String firstName){
-		return new ResponseEntity<String>("Delete Call Success for firstName: "+firstName,HttpStatus.OK);
+	public ResponseEntity<ResponseDTO> deleteEmployeePayrollData(@PathVariable("fName") String firstName){
+		PersonData personData = null;
+		personData = new PersonData("Ganesh","Rapeti", "1-51A,Venkupalem", "Anakapalle", "Andhra Pradesh", "190007", "9866832480", "ganeshrapeti8@gmail.com");
+		ResponseDTO respDTO = new ResponseDTO("Delete Call Successful", personData);
+		return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
 	}
 }
