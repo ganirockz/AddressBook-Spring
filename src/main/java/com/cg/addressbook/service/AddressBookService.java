@@ -9,18 +9,21 @@ import com.cg.addressbook.model.PersonData;
 
 @Service
 public class AddressBookService {
-
+	
+	private List<PersonData> personDataList = new ArrayList<PersonData>();
+	
 	public List<PersonData> getPersonData() {
-		List<PersonData> personList = new ArrayList<>();
-		personList.add(new PersonData("Ganesh", "Rapeti", "1-51A,Venkupalem", "Anakapalle", "Andhra Pradesh", "190007",
-				"9866832480", "ganeshrapeti8@gmail.com"));
-		return personList;
+		return personDataList;
 	}
 	
 	public PersonData getPersonByFirstName(String firstName) {
-		PersonData person = new PersonData("Ganesh", "Rapeti", "1-51A,Venkupalem", "Anakapalle", "Andhra Pradesh", "190007",
-				"9866832480", "ganeshrapeti8@gmail.com");
-		return person;
+		PersonData personData = null;
+		for(PersonData person: personDataList) {
+			if(person.getFirstName().equals(firstName)) {
+				personData = person;
+			}
+		}
+		return personData;
 	}
 	
 	public PersonData createPersonData(AddressBookDTO addressBookDTO) {
@@ -29,13 +32,15 @@ public class AddressBookService {
 		return person;
 	}
 	
-	public PersonData updatePersonData(AddressBookDTO addressBookDTO) {
-		PersonData person = null;
-		person = new PersonData(addressBookDTO);
+	public PersonData updatePersonData(String firstName,AddressBookDTO addressBookDTO) {
+		PersonData person = this.getPersonByFirstName(firstName);
+		person.setAddress(addressBookDTO.getAddress());
 		return person;
 	}
 	
 	public void deletePersonData(String firstName) {
-		
+		PersonData person = this.getPersonByFirstName(firstName);
+		personDataList.remove(person);
 	}
+	
 }
