@@ -40,3 +40,12 @@ Identify and stop the process that's listening on port 8091 or configure this ap
 2020-12-16 02:03:25.940  WARN 9248 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2020-12-16 02:03:26.608  INFO 9248 --- [restartedMain] c.c.a.AddressBookAppApplication          : Started AddressBookAppApplication in 5.283 seconds (JVM running for 6.445)
 2020-12-16 02:03:26.611  INFO 9248 --- [restartedMain] c.c.a.AddressBookAppApplication          : Address Book App Started
+2020-12-16 02:12:37.898  INFO 7336 --- [restartedMain] c.c.a.AddressBookAppApplication          : Starting AddressBookAppApplication using Java 13.0.2 on LAPTOP-2DQUBLJ8 with PID 7336 (H:\java-eclipse\AddressBookApp\target\classes started by ganeshrapeti in H:\java-eclipse\AddressBookApp)
+2020-12-16 02:12:37.903 DEBUG 7336 --- [restartedMain] c.c.a.AddressBookAppApplication          : Running with Spring Boot v2.4.1, Spring v5.3.2
+2020-12-16 02:12:37.904  INFO 7336 --- [restartedMain] c.c.a.AddressBookAppApplication          : The following profiles are active: dev
+2020-12-16 02:12:39.829  WARN 7336 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-12-16 02:12:41.604  WARN 7336 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-16 02:12:42.282  INFO 7336 --- [restartedMain] c.c.a.AddressBookAppApplication          : Started AddressBookAppApplication in 4.859 seconds (JVM running for 6.599)
+2020-12-16 02:12:42.289  INFO 7336 --- [restartedMain] c.c.a.AddressBookAppApplication          : Address Book App Started in DEV Environmet
+2020-12-16 05:16:36.467  WARN 7336 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h26s169ms712µs).
+2020-12-16 07:20:09.499  WARN 7336 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h3m52s555ms212µs200ns).
