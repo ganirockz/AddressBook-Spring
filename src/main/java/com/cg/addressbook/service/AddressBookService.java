@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cg.addressbook.dto.AddressBookDTO;
+import com.cg.addressbook.exception.AddressBookException;
 import com.cg.addressbook.model.AddressBookData;
 import com.cg.addressbook.repository.AddressBookRepository;
 
@@ -20,7 +21,7 @@ public class AddressBookService {
 	}
 	
 	public AddressBookData getPersonByFirstName(String firstName) {
-		AddressBookData personData = addressBookRepository.findById(firstName).orElseThrow();
+		AddressBookData personData = addressBookRepository.findById(firstName).orElseThrow(() -> new AddressBookException("Person Not Found"));
 		return personData;
 	}
 	
