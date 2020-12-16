@@ -1,5 +1,7 @@
 package com.cg.addressbook.dto;
 
+import java.util.List;
+
 import com.cg.addressbook.model.AddressBookData;
 
 import lombok.Data;
@@ -15,6 +17,10 @@ public class ResponseDTO {
 	}
 
 	public ResponseDTO(String message, String firstName) {
+		this.message = message;
+	}
+
+	public ResponseDTO(String message, List<String> errMesg) {
 		this.message = message;
 	}
 }
