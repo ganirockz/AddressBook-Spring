@@ -20,8 +20,8 @@ public class AddressBookService {
 		return addressBookRepository.findAll();
 	}
 	
-	public AddressBookData getPersonByFirstName(String firstName) {
-		AddressBookData personData = addressBookRepository.findById(firstName).orElseThrow(() -> new AddressBookException("Person Not Found"));
+	public AddressBookData getPersonById(Long id) {
+		AddressBookData personData = addressBookRepository.findById(id).orElseThrow(() -> new AddressBookException("Person Not Found"));
 		return personData;
 	}
 	
@@ -32,15 +32,21 @@ public class AddressBookService {
 		return person;
 	}
 	
-	public AddressBookData updatePersonData(String firstName,AddressBookDTO addressBookDTO) {
-		AddressBookData person = this.getPersonByFirstName(firstName);
+	public AddressBookData updatePersonData(Long id,AddressBookDTO addressBookDTO) {
+		AddressBookData person = this.getPersonById(id);
+		person.setFirstName(addressBookDTO.getFirstName());
+		person.setLastName(addressBookDTO.getLastName());
 		person.setAddress(addressBookDTO.getAddress());
+		person.setCity(addressBookDTO.getCity());
+		person.setState(addressBookDTO.getCity());
+		person.setPhoneNumber(addressBookDTO.getPhoneNumber());
+		person.setZip(addressBookDTO.getZip());
 		addressBookRepository.save(person);
 		return person;
 	}
 	
-	public void deletePersonData(String firstName) {
-		addressBookRepository.deleteById(firstName);
+	public void deletePersonData(Long id) {
+		addressBookRepository.deleteById(id);
 	}
 	
 }

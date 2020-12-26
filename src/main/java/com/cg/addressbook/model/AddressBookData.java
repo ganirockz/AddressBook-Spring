@@ -2,19 +2,28 @@ package com.cg.addressbook.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.cg.addressbook.dto.AddressBookDTO;
 
+import lombok.Data;
+
+@Data
 @Entity
-@Table(name = "address_book")
+@Table(name = "addressbook")
 public class AddressBookData {
 	@Id
-	@Column(name="firstName")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id")
+	private Long id;
+	
+	@Column(name="first_name")
 	private String firstName;
 	
-	@Column(name="lastName")
+	@Column(name="last_name")
 	private String lastName;
 	
 	@Column(name="address")
@@ -32,57 +41,6 @@ public class AddressBookData {
 	@Column(name="phone_number")
 	private String phoneNumber;
 	
-	@Column(name="email")
-	private String email;
-	
-	public String getFirstName() {
-		return firstName;
-	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public String getCity() {
-		return city;
-	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public String getState() {
-		return state;
-	}
-	public void setState(String state) {
-		this.state = state;
-	}
-	public String getZip() {
-		return zip;
-	}
-	public void setZip(String zip) {
-		this.zip = zip;
-	}
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	
 	public AddressBookData(String firstName,String lastName,String address,String city,String state,String zip,String phoneNumber,String email) {
 		this.firstName =firstName;
@@ -92,7 +50,6 @@ public class AddressBookData {
 		this.state = state;
 		this.zip = zip;
 		this.phoneNumber = phoneNumber;
-		this.email = email;
 	}
 	public AddressBookData() {
 		
@@ -105,6 +62,5 @@ public class AddressBookData {
 		this.state = addressBookDTO.getState();
 		this.zip = addressBookDTO.getZip();
 		this.phoneNumber = addressBookDTO.getPhoneNumber();
-		this.email = addressBookDTO.getEmail();
 	}
 }
