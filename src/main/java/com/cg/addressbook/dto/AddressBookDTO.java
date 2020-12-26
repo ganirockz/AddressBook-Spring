@@ -24,6 +24,4 @@ public class AddressBookDTO {
 	private String zip;
 	@Pattern(regexp="^[6-9]{1}[0-9]{9}",message="Phone number should be 10 digits")
 	private String phoneNumber;
-	@Pattern(regexp="^([a][b][c])[.]([a-zA-Z]+)[@]([b][l][.][c][o])[.]([a-zA-Z]{2})$",message="Invalid email")
-	private String email;
 }
